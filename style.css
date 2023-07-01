@@ -1,0 +1,187 @@
+:root {
+    --color-h1: #FFFFFF;
+    --color-p: #23053A;
+    --color-h2: #4A4E69;
+    --bg-header: #8E9AAF;
+    --bg-body: #EFF1FF;
+    --bg-h1: #CBC0D3;
+    --bg-h2: #FEEAFA;
+
+    --font-h1-h2: 'Staatliches', cursive;
+    --font-p: 'Palanquin', sans-serif;
+
+    font-size: 62.5%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: var(--font-h1-h2);
+
+    background: var(--bg-body);
+}
+
+
+header {
+    padding: 3.2rem 0;
+    background: var(--bg-header);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3.2rem;
+}
+
+header img {
+    max-width: 16.7rem;
+}
+
+header h1 {
+    background: var(--bg-h1);
+    color: var(--color-h1);
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);;
+
+    font-size: 4rem;
+    font-weight: 400;
+    line-height: 3.4rem;
+    letter-spacing: 2px;
+    padding: 0.8rem;
+
+    width: 100%;
+    text-align: center;
+}
+
+header img, h1 {
+    animation: topdown 700ms;
+}
+
+main {
+    width: 38.4rem;
+    margin: auto;
+    padding: 1.4rem 3.2rem;
+
+    display: grid;
+    align-items: center;
+    gap: 3.2rem;
+    margin-bottom: 5.0rem;
+}
+
+main .cards {
+    display: grid;
+    gap: 3.2rem;
+}
+
+main p {
+    text-align: center;
+    color: var(--color-p);
+    font-family: var(--font-p);
+    font-size: 1.7rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+
+    margin-bottom: 2.8rem;
+    animation: downtop 800ms backwards;
+}
+
+.card {
+    position: relative;
+}
+
+.card h2 {
+    position: absolute;
+    top: 1.6rem;
+    right: 1.6rem;
+
+    font-size: 2rem;
+    line-height: 3.4rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    padding: 0 2.3rem;
+
+
+    color: var(--color-h2);
+    background: var(--bg-h2);
+    border-radius: 2rem;
+
+    animation: topdown 700ms;
+}
+
+.card img {
+    animation: downtop 800ms backwards;
+    object-fit: cover;
+    opacity: 1;
+    transition: all 200ms;
+}
+
+.card img:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+}
+
+@keyframes topdown {
+    0% {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes downtop {
+    0% {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (min-width: 730px) {
+    main {
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    main p {
+        width: 50rem;
+    }
+  
+    .cards {
+      display: grid;
+      grid-template-areas: "A C" "B D";
+      gap: 3.2rem;
+    }
+
+    .cards div:nth-child(1) {
+        grid-area: A;
+    }
+
+    .cards div:nth-child(2) {
+        grid-area: B;
+    }
+
+    .cards div:nth-child(3) {
+        grid-area: C;
+    }
+
+    .cards div:nth-child(4) {
+        grid-area: D;
+    }
+  }
+  
+  
+  
