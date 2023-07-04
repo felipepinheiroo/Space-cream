@@ -4,7 +4,7 @@
 </h3>
 
 <p align="center" style="display: flex; align-items: flex-start; justify-content: center">
-  <img alt="Imagem do site se adaptando conforme a tela do navegador" title="Space Cream" src="https://i.imgur.com/hus8xRm.gif">
+  <img alt="Imagem do site se adaptando conforme a tela do navegador" title="Space Cream" src="https://s12.gifyu.com/images/SQX12.gif">
 </p>  
 
 ### 💻 Sobre o desafio
