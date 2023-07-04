@@ -9,6 +9,7 @@
 
     --font-h1-h2: 'Staatliches', cursive;
     --font-p: 'Palanquin', sans-serif;
+    --font-footer: 'Open Sans', sans-serif;
 
     font-size: 62.5%;
 }
@@ -35,10 +36,7 @@ header {
     flex-direction: column;
     align-items: center;
     gap: 3.2rem;
-}
-
-header img {
-    max-width: 16.7rem;
+    margin-bottom: 1.4rem;
 }
 
 header h1 {
@@ -52,23 +50,23 @@ header h1 {
     letter-spacing: 2px;
     padding: 0.8rem;
 
-    width: 100%;
+    width: 100vw;
     text-align: center;
 }
 
-header img, h1 {
+header img, h1, header p {
     animation: topdown 700ms;
+}
+
+header .text {
+    display: none;
 }
 
 main {
     width: 38.4rem;
     margin: auto;
     padding: 1.4rem 3.2rem;
-
     display: grid;
-    align-items: center;
-    gap: 3.2rem;
-    margin-bottom: 5.0rem;
 }
 
 main .cards {
@@ -84,15 +82,15 @@ main p {
     line-height: 1.5rem;
     font-weight: 400;
 
-    margin-bottom: 2.8rem;
+    margin-bottom: 6rem;
     animation: downtop 800ms backwards;
 }
 
-.card {
+.card, .card2 {
     position: relative;
 }
 
-.card h2 {
+.card h2, .card2 h2 {
     position: absolute;
     top: 1.6rem;
     right: 1.6rem;
@@ -116,12 +114,36 @@ main p {
     object-fit: cover;
     opacity: 1;
     transition: all 200ms;
+    
+    width: 100%;
+    height: 450px;
+    border-radius: 20px;
 }
 
-.card img:hover {
+.card2 img {
+    animation: downtop 800ms backwards;
+    object-fit: cover;
+    opacity: 1;
+    transition: all 200ms;
+    
+    height: 250px;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.card img:hover, .card2 img:hover {
     opacity: 0.8;
     transform: scale(1.05);
 }
+
+.cards div:nth-child(5), .cards div:nth-child(6) {
+    display: none;
+}
+
+.footer {
+    display: none;
+}
+
 
 @keyframes topdown {
     0% {
@@ -147,22 +169,106 @@ main p {
     }
 }
 
-@media (min-width: 730px) {
-    main {
-      margin: auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
+@media (min-width: 800px) {
+
+    .page {
+        display: flex;
     }
 
-    main p {
-        width: 50rem;
+    header {
+        width: 37.7rem;
+        height: 100vh;
+        text-align: center;
+        margin: 0;
     }
-  
+
+    header h1 {
+        width: 37.7rem;
+    }
+
+    header .text {
+        display: block;
+        width: 27.5rem;
+        color: var(--color-h1);
+        font-family: var(--font-p);
+        font-size: 1.9rem;
+        font-weight: 400;
+        line-height: 2rem;
+    }
+
+
+    main {
+        margin: auto;
+        width: auto;
+        padding: 3rem 6rem;
+    }
+
+    .main p {
+        display: none;
+    }
+
     .cards {
       display: grid;
-      grid-template-areas: "A C" "B D";
+      grid-template-areas: 
+      "A B"
+      "D B"
+      "D C"
+      ;
+      gap: 3.2rem;
+    }
+
+
+    .card img {
+        object-fit: cover;
+        width: 100%;
+        height: 35rem;
+        border-radius: 2rem;
+    }
+
+    .card2 img {
+        height: 15rem;
+        width: 100%;
+        border-radius: 2rem;
+        object-fit: cover;
+    }
+
+    .cards div:nth-child(1) {
+        grid-area: A;
+    }
+
+    .cards div:nth-child(2) {
+        grid-area: B;
+    }
+
+    .cards div:nth-child(3) {
+        grid-area: C;
+    }
+
+    .cards div:nth-child(4) {
+        grid-area: D;
+    }
+
+    .footer {
+        display: block;
+        margin-top: 7rem;
+        text-align: center;
+        
+        color: var(--color-h2);
+        font-family: var(--font-footer);
+        font-size: 1.4rem;
+    }
+}
+
+
+@media (min-width: 1150px) {
+    
+    .cards {
+      display: grid;
+      grid-template-areas: 
+      "A B E"
+      "D B F"
+      "D C F"
+      ;
       gap: 3.2rem;
     }
 
@@ -180,6 +286,16 @@ main p {
 
     .cards div:nth-child(4) {
         grid-area: D;
+    }
+
+    .cards div:nth-child(5) {
+        display: block;
+        grid-area: E;
+    }
+
+    .cards div:nth-child(6) {
+        display: block;
+        grid-area: F;
     }
   }
   
