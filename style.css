@@ -37,6 +37,7 @@ header {
     align-items: center;
     gap: 3.2rem;
     margin-bottom: 1.4rem;
+    width: 100vw;
 }
 
 header h1 {
@@ -63,7 +64,7 @@ header .text {
 }
 
 main {
-    width: 38.4rem;
+    width: 35rem;
     margin: auto;
     padding: 1.4rem 3.2rem;
     display: grid;
