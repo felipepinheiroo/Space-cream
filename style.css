@@ -64,9 +64,9 @@ header .text {
 }
 
 main {
-    width: 35rem;
+    max-width: 34.8rem;
     margin: auto;
-    padding: 1.4rem 3.2rem;
+    padding: 1.4rem 2rem;
     display: grid;
 }
 
@@ -200,7 +200,7 @@ main p {
 
     main {
         margin: auto;
-        width: auto;
+        max-width: none;
         padding: 3rem 6rem;
     }
 
@@ -299,6 +299,3 @@ main p {
         grid-area: F;
     }
   }
-  
-  
-  
